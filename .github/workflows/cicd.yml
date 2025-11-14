@@ -20,3 +20,16 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy on VPS
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          cd /duong-dan-toi-project-tren-vps
+          git pull
+          docker compose pull || true
+          docker compose up -d --build
+          EOF
