@@ -23,7 +23,7 @@ jobs:
       - name: Get SSH Key and set permissions
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH PRIVATE KEY"}}" ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
       - name: Deploy using SCP
         run: scp-o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST}}:~/node-app
       - name: Restart Server
