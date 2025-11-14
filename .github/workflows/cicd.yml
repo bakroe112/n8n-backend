@@ -28,7 +28,7 @@ jobs:
       - name: Deploy on VPS
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-          cd /duong-dan-toi-project-tren-vps
+          cd /frontend
           git pull
           docker compose pull || true
           docker compose up -d --build
