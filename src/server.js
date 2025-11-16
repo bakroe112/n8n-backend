@@ -10,6 +10,8 @@ const summaryRoutes = require("./routes/Cashflow/cashflowSummary");
 const expenseRoutes = require("./routes/ExpBud/expenseRoutes");
 const budgetRoutes = require("./routes/ExpBud/budgetRoutes");
 const reportRoutes = require("./routes/ExpBud/reportRoutes");
+// Invoice 
+const invoicesRouter = require("./routes/Invoice/InvoiceRoutes");
 
 const app = express();
 app.use(cors());
@@ -23,6 +25,8 @@ app.use("/api/summary", summaryRoutes);
 app.use("/api/expenses", expenseRoutes);
 app.use("/api/budgets", budgetRoutes);
 app.use("/api/reports", reportRoutes);
+// Invoice
+app.use("/api/invoices", invoicesRouter);
 
 const PORT = process.env.PORT || 4000;
 const db_URL = process.env.MONGO_URI;
