@@ -27,6 +27,9 @@ const InvoiceSchema = new mongoose.Schema(
       enum: ["PENDING", "PAID", "OVERDUE"],
       default: "PENDING",
     },
+    category: {
+      type: String,
+    },
     paid_date: {
       type: Date,
     },

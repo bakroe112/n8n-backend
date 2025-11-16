@@ -21,6 +21,7 @@ router.post("/batch", async (req, res) => {
       due_date: new Date(inv.due_date), // bắt buộc
       amount: Number(inv.amount), // bắt buộc
       status: inv.status || "PENDING", // PENDING / PAID / OVERDUE
+      category: inv.category,
       paid_date: inv.paid_date ? new Date(inv.paid_date) : undefined,
       bank_name: inv.bank_name,
     }));
