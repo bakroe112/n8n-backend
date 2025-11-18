@@ -8,7 +8,6 @@ const TransactionSchema = new mongoose.Schema(
     balance: { type: Number },
     amount: { type: Number, required: true },
     type: { type: String, enum: ["credit", "debit"], required: true },
-    balance_after: { type: Number },
   },
   { timestamps: true }
 );

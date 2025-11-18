@@ -19,8 +19,6 @@ router.post("/batch", async (req, res) => {
       balance: Number(t.balance),
       amount: Number(t.amount),
       type: t.type === "credit" ? "credit" : "debit",
-      balance_after:
-        t.balance_after != null ? Number(t.balance_after) : undefined,
     }));
 
     const inserted = await Transaction.insertMany(docs, { ordered: false });
