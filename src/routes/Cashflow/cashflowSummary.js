@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
       total_credit: Number(total_credit || 0),
       total_debit: Number(total_debit || 0),
       net_cashflow: Number(net_cashflow || 0),
-      predicted_balance: Number(balance || 0),
+      balance: Number(balance || 0),
       created_at: new Date(),
     });
 
