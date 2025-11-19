@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const TransactionSchema = new mongoose.Schema(
   {
     bank_name: { type: String, required: true },
+    account_number: { type: Number, required: true },
     date: { type: Date, required: true },
     description: { type: String },
     balance: { type: Number },
